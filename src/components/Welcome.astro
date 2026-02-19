@@ -1,12 +1,7 @@
 ---
 import { AnimatedThemeToggler } from "@components/ui/animated-theme-toggler";
-const matches = import.meta.glob("./posts/*.mdx", { eager: true });
-const posts = Object.values(matches);
 ---
 
 <div class="container mx-auto max-w-xl py-4">
   <AnimatedThemeToggler client:load />
-  <ul class="bg-base-300">
-    {posts.map((post) => <li>{post.title}</li>)}
-  </ul>
 </div>
