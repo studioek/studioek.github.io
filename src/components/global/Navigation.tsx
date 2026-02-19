@@ -7,10 +7,12 @@ import {
   NavigationMenuTrigger,
 } from "@components/ui/navigation-menu";
 import Highlighter from "@components/ui/highlighter";
+import { cn } from "@lib/utils";
+import { AnimatedThemeToggler } from "@components/ui/animated-theme-toggler";
 
-export function Navigation() {
+export function Navigation({ className }: { className?: string }) {
   return (
-    <NavigationMenu>
+    <NavigationMenu className={cn("mx-auto max-w-xl", className)}>
       <NavigationMenuList>
         <NavigationMenuItem className="mr-4">
           <NavigationMenuLink href="/">
@@ -18,78 +20,9 @@ export function Navigation() {
           </NavigationMenuLink>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuTrigger>Item One</NavigationMenuTrigger>
+          <NavigationMenuTrigger>Linkler</NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-              <li className="row-span-3">
-                <NavigationMenuLink asChild>
-                  <a
-                    className="from-muted/50 to-muted flex h-full w-full flex-col justify-end rounded-md bg-gradient-to-b p-6 no-underline outline-none select-none focus:shadow-md"
-                    href="/"
-                  >
-                    <div className="mt-4 mb-2 text-lg font-medium">
-                      shadcn/ui
-                    </div>
-                    <p className="text-muted-foreground text-sm leading-tight">
-                      Beautifully designed components built with Radix UI and
-                      Tailwind CSS.
-                    </p>
-                  </a>
-                </NavigationMenuLink>
-              </li>
-              <li>
-                <NavigationMenuLink asChild>
-                  <a
-                    href="/docs"
-                    className="hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground block space-y-1 rounded-md p-3 leading-none no-underline transition-colors outline-none select-none"
-                  >
-                    <div className="text-sm leading-none font-medium">
-                      Introduction
-                    </div>
-                    <p className="text-muted-foreground line-clamp-2 text-sm leading-snug">
-                      Re-usable components built using Radix UI and Tailwind
-                      CSS.
-                    </p>
-                  </a>
-                </NavigationMenuLink>
-              </li>
-              <li>
-                <NavigationMenuLink asChild>
-                  <a
-                    href="/docs/installation"
-                    className="hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground block space-y-1 rounded-md p-3 leading-none no-underline transition-colors outline-none select-none"
-                  >
-                    <div className="text-sm leading-none font-medium">
-                      Installation
-                    </div>
-                    <p className="text-muted-foreground line-clamp-2 text-sm leading-snug">
-                      How to install dependencies and structure your app.
-                    </p>
-                  </a>
-                </NavigationMenuLink>
-              </li>
-              <li>
-                <NavigationMenuLink asChild>
-                  <a
-                    href="/docs/primitives/typography"
-                    className="hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground block space-y-1 rounded-md p-3 leading-none no-underline transition-colors outline-none select-none"
-                  >
-                    <div className="text-sm leading-none font-medium">
-                      Typography
-                    </div>
-                    <p className="text-muted-foreground line-clamp-2 text-sm leading-snug">
-                      Styles for headings, paragraphs, lists...etc
-                    </p>
-                  </a>
-                </NavigationMenuLink>
-              </li>
-            </ul>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <NavigationMenuTrigger>Components</NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+            <ul className="grid w-100 gap-3 p-4 md:w-125 md:grid-cols-2 lg:w-150">
               {components.map((component) => (
                 <li key={component.title}>
                   <NavigationMenuLink asChild>
@@ -111,12 +44,7 @@ export function Navigation() {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuLink
-            className="group bg-background hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground data-[active]:bg-accent/50 data-[state=open]:bg-accent/50 inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors focus:outline-none disabled:pointer-events-none disabled:opacity-50"
-            href="/docs"
-          >
-            Documentation
-          </NavigationMenuLink>
+          <AnimatedThemeToggler />
         </NavigationMenuItem>
       </NavigationMenuList>
     </NavigationMenu>
