@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://emrekayik.github.io/astro/sitemap-index.xml
