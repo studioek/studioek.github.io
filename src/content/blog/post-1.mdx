@@ -1,0 +1,51 @@
+---
+title: "My First MDX Post with Highlighter"
+description: "This is a sample post demonstrating MDX capabilities and the custom Highlighter component."
+pubDate: "2025-02-23"
+---
+
+import Highlighter from "@components/ui/highlighter";
+
+# Welcome to my new blog!
+
+This is an example of how **MDX** works. You can write Markdown as usual, but you can also import and use React components directly.
+
+## Using the Highlighter Component
+
+Here is a standard paragraph. But what if we want to highlight something special?
+
+<Highlighter client:visible action="highlight" color="#ffd1dc">
+  This text is highlighted using our custom component!
+</Highlighter>
+
+We can also do other annotations like:
+
+- <Highlighter client:visible action="box" color="#b3e5fc">
+    Boxing text
+  </Highlighter>
+- <Highlighter client:visible action="circle" color="#c8e6c9">
+    Circling text
+  </Highlighter>
+- <Highlighter client:visible action="underline" color="#ffccbc">
+    Underlining text
+  </Highlighter>
+- <Highlighter client:visible action="strike-through" color="#e1bee7">
+    Striking through text
+  </Highlighter>
+
+## Syntax Highlighting
+
+Astro's MDX integration comes with Shiki built-in for syntax highlighting.
+
+```javascript
+// This is a code block
+function helloWorld() {
+  console.log("Hello, world!");
+}
+```
+
+```python
+# Python code block
+def hello_world():
+    print("Hello, world!")
+```

@@ -13,6 +13,8 @@ import vue from "@astrojs/vue";
 
 import sitemap from "@astrojs/sitemap";
 
+import mdx from "@astrojs/mdx";
+
 // https://astro.build/config
 export default defineConfig({
   site: 'https://studioek.github.io',
@@ -20,5 +22,5 @@ export default defineConfig({
     plugins: [tailwindcss()]
   },
 
-  integrations: [react(), svelte(), alpinejs(), vue(), sitemap()]
+  integrations: [react(), svelte(), alpinejs(), vue(), sitemap(), mdx()]
 });
