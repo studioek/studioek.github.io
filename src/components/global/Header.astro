@@ -1,0 +1,11 @@
+---
+import { AnimatedThemeToggler } from "@components/ui/animated-theme-toggler";
+import { Navigation } from "@components/global/Navigation";
+---
+
+<div class="container mx-auto max-w-xl py-4">
+  <div class="flex justify-between">
+    <Navigation client:load />
+    <AnimatedThemeToggler client:load />
+  </div>
+</div>
